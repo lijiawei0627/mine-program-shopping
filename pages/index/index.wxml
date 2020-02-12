@@ -28,5 +28,15 @@
       </swiper-item>
     </swiper>
   </view>
+  <!-- 分类导航 -->
+  <view class="index_cate">
+    <navigator 
+    wx:for="{{catesList}}"
+    wx:key="name"
+    >
+      <image src="{{ item.image_src }}" mode="widthFix" /> 
+    </navigator>
+      
+  </view>
 </view>
   

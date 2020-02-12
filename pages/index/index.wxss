@@ -1,7 +1,19 @@
+/* 轮播图 */
 .index-swiper swiper {
   width: 750rpx;
   height: 340rpx;
 }
 .index-swiper swiper swiper-item image {
+  width: 100%;
+}
+/* 分类导航 */
+.index_cate {
+  display: flex;
+}
+.index_cate navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+.index_cate navigator image {
   width: 100%;
 }
