@@ -1,0 +1,7 @@
+.index-swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index-swiper swiper swiper-item image {
+  width: 100%;
+}
