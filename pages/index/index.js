@@ -4,7 +4,9 @@ Page({
     // 轮播图数组
     swiperList: [],
     // 分类导航数组
-    catesList: []
+    catesList: [],
+    // 楼层数据
+    floorList: []
   },
   // 页面开始加载时触发的声明周期函数
   onLoad: function (options) {
@@ -20,6 +22,7 @@ Page({
     // });
     this.getSwiperList();
     this.getCateList();
+    this.getFloorList();
   },
   // 获取轮播图数据
   getSwiperList () {
@@ -37,9 +40,20 @@ Page({
   getCateList () {
     request({ url: 'https://api.zbztb.cn/api/public/v1/home/catitems' })
       .then(result => {
-        console.log(result)
         this.setData({
           catesList: result
+        })
+      }, err => {
+        console.log(err)
+      })
+  },
+  // 获取楼层数据
+  getFloorList () {
+    request({ url: 'https://api.zbztb.cn/api/public/v1/home/floordata' })
+      .then(result => {
+        console.log(result)
+        this.setData({
+          floorList: result
         })
       }, err => {
         console.log(err)
