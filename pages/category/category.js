@@ -61,9 +61,9 @@ Page({
   }
   },
   getCates () {
-    request({ url: 'https://api.zbztb.cn/api/public/v1/categories' })
+    request({ url: '/categories' })
       .then(result => {
-        this.cateList = result.data.message
+        this.cateList = result
         // 把接口的数据存入到本地存储中
         wx.setStorageSync("cates", {time:Date.now(), data:this.cateList});
 
