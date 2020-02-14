@@ -51,7 +51,6 @@ Page({
   getFloorList () {
     request({ url: 'https://api.zbztb.cn/api/public/v1/home/floordata' })
       .then(result => {
-        console.log(result)
         this.setData({
           floorList: result
         })
