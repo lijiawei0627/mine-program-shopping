@@ -19,6 +19,10 @@ page .cates .cates_container .left_menu .menu_item {
   line-height: 80rpx;
   font-size: 30rpx;
 }
+.active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
 /* 右侧商品 */
 page .cates .cates_container .right_content {
   flex: 5;
