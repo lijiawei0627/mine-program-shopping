@@ -3,7 +3,7 @@ export const request=(params)=>{
     wx.request({
      ...params,
      success:(result)=>{
-       resolve(result.data.message);
+       resolve(result);
      },
      fail:(err)=>{
        reject(err);

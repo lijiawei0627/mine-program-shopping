@@ -30,7 +30,7 @@ Page({
     request({ url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata' })
       .then(result => {
         this.setData({
-          swiperList: result
+          swiperList: result.data.message
         })
       }, err => {
         console.log(err)
@@ -41,7 +41,7 @@ Page({
     request({ url: 'https://api.zbztb.cn/api/public/v1/home/catitems' })
       .then(result => {
         this.setData({
-          catesList: result
+          catesList: result.data.message
         })
       }, err => {
         console.log(err)
@@ -52,7 +52,7 @@ Page({
     request({ url: 'https://api.zbztb.cn/api/public/v1/home/floordata' })
       .then(result => {
         this.setData({
-          floorList: result
+          floorList: result.data.message
         })
       }, err => {
         console.log(err)
