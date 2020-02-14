@@ -32,6 +32,7 @@
           wx:key="cat_id"
           wx:for-item="item1"
           wx:for-index="index1"
+          url="/pages/goods_list/goods_list?cid={{item1.cat_id}}"
           >
             <image class="" src="{{item1.cat_icon}}" mode="widthFix" />
             <view class="goods_name">
