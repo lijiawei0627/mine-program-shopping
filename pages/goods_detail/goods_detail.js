@@ -45,6 +45,7 @@ Page({
       this.GoodsInfo = goodsObj;
       this.setData({
         goodsObj: {
+          // 只提取部分有用数据
           goods_name: goodsObj.goods_name,
           goods_price: goodsObj.goods_price,
           // iphone部分手机 不识别 webp图片格式 
@@ -69,5 +70,33 @@ Page({
       urls
     })
   },
+  // 点击 加入购物车
+  handleCartAdd () {
+    // 1 获取缓存中购物车数组
+    // wx.setStorageSync和wx.setStorage的区别在于
+    // wx.setStorageSync为同步缓存
+    // wx.setStorage为异步缓存
+    let cart = wx.getStorageSync("cart") || [];
+    // 2 判断商品对象是否存在于购物车数组中
+    let index = cart.findIndex(v => v.goods_id === this.GoodsInfo.goods_id);
+    if (index === -1) {
+      // 3 不存在 第一次添加
+      this.GoodsInfo.num = 1;
+      this.GoodsInfo.checked = true;
+      cart.push(this.GoodsInfo);
+    } else {
+      // 4 已经存在购物车数据 执行num++
+      cart[index].num++;
+    }
+    // 5 把购物车重新添加回缓存中
+    wx.setStorageSync("cart", cart);
+    // 6 弹窗提示
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      // 显示透明蒙层，防止触摸穿透(避免用户疯狂点击按钮)
+      mask: true
+    });
+  }
 
 })

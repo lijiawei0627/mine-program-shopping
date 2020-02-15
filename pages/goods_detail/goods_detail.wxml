@@ -32,3 +32,28 @@
     <rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
   </view>
 </view>
+
+<view class="btm_tool">
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+    <!-- 通过button来使用微信开放能力，如调用客服、分享等功能 -->
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool_item">
+    <view class="iconfont icon-yixianshi-"></view>
+    <view>分享</view>
+    <button open-type="share"></button>
+  </view>
+  <!-- 注意此处是跳转到tabbar页面，open-type需使用switchTab -->
+  <navigator open-type="switchTab" url="/pages/cart/cart" class="tool_item">
+    <view class="iconfont icon-gouwuche"></view>
+    <view>购物车</view>
+  </navigator>
+  <view class="tool_item btn_cart " bindtap="handleCartAdd">
+  加入购物车
+  </view>
+  <view class="tool_item btn_buy">
+    立即购买
+  </view>
+</view>
