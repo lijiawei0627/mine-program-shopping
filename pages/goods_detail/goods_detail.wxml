@@ -17,9 +17,9 @@
 
 <view class="goods_price">￥{{goodsObj.goods_price}}</view>
 <view class="goods_name_row">
-  <view class="goods_name">{{goodsObj.goods_name}}</view>
-  <view class="goods_collect" >
-    <text class="iconfont icon-shoucang"></text>
+  <view class="goods_name">{{goodsObj.goods_name}}{{goodsObj.goods_name}}</view>
+  <view class="goods_collect" bindtap="handleCollect" >
+    <text class="iconfont   {{isCollect?'icon-shoucang1':'icon-shoucang'}} "></text>
     <view class="collect_text">收藏</view>
   </view>
 </view>
@@ -37,7 +37,6 @@
   <view class="tool_item">
     <view class="iconfont icon-kefu"></view>
     <view>客服</view>
-    <!-- 通过button来使用微信开放能力，如调用客服、分享等功能 -->
     <button open-type="contact"></button>
   </view>
   <view class="tool_item">
@@ -45,8 +44,7 @@
     <view>分享</view>
     <button open-type="share"></button>
   </view>
-  <!-- 注意此处是跳转到tabbar页面，open-type需使用switchTab -->
-  <navigator open-type="switchTab" url="/pages/cart/cart" class="tool_item">
+  <navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
     <view class="iconfont icon-gouwuche"></view>
     <view>购物车</view>
   </navigator>
