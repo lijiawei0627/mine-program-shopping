@@ -15,7 +15,6 @@ Page({
     //  3 发送请求 获取用户的token
     const {token}=await request({url:"/users/wxlogin",data:loginParams,method:"post"});
     // 4 把token存入缓存中 同时跳转回上一个页面
-    console.log(token)
     wx.setStorageSync("token", token);
     wx.navigateBack({
       delta: 1
