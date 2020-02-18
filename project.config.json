@@ -93,6 +93,13 @@
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索中心",
+					"pathName": "pages/search/search",
 					"scene": null
 				}
 			]
